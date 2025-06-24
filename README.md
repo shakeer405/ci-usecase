@@ -49,6 +49,13 @@ Below is a comprehensive table of popular **unit testing tools**, along with det
 | **Robot Framework** | Python/others | Create test suites with `.robot` files using keywords                                   | `robot tests/` or use `pabot` for parallel testing                   |
 
 ---
-
+Why Use JaCoCo?
+Reason	Explanation
+✅ Measure Test Quality	Ensures your tests are covering enough of your code logic
+✅ Identify Untested Code	Highlights unused branches, methods, or classes
+✅ Improve Code Reliability	Higher coverage helps reduce bugs and increases confidence in the code
+✅ Generate Coverage Reports	Produces visual reports (HTML, XML, CSV) for analysis or CI/CD dashboards
+✅ CI/CD Integration	Easily integrates with Jenkins, GitHub Actions, SonarQube, etc.
+✅ Track Coverage Over Time	Helps monitor test effectiveness over builds/releases
 
 
