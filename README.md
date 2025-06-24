@@ -106,3 +106,6 @@ mvn verify
 | ✅ **CI/CD Use Case**  | Verify code correctness early               | Verify feature behavior before release               |
 | 📊 **Typical Output** | Pass/fail per method                        | User-level test result with coverage/response checks |
 
+| **Unit Test**                          | **Functional Test**                             |
+| -------------------------------------- | ----------------------------------------------- |
+| "Does `a + b` work correctly in code?" | "When I hit `/add?a=2&b=3`, do I get `5` back?" |
