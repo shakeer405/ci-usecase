@@ -77,3 +77,11 @@ Functional testing:
 | **TestNG**                    | Functional + unit testing  | Java                   | Jenkins, GitHub         | Parallel test execution, groups, data providers                                     |
 | **Protractor** *(deprecated)* | Angular testing            | JavaScript             | Jenkins, GitHub         | Deprecated in 2023 — consider Cypress or Playwright instead                         |
 
+| **Use Case**                    | **Best Tool**          |
+| ------------------------------- | ---------------------- |
+| Modern web apps (React/Angular) | ✅ **Cypress**          |
+| Cross-browser E2E tests         | ✅ **Playwright**       |
+| API tests with CI integration   | ✅ **Postman + Newman** |
+| Java-based API testing          | ✅ **Rest Assured**     |
+| Mobile app functional testing   | ✅ **Appium**           |
+| BDD acceptance testing          | ✅ **Cucumber**         |
