@@ -85,3 +85,12 @@ Functional testing:
 | Java-based API testing          | ✅ **Rest Assured**     |
 | Mobile app functional testing   | ✅ **Appium**           |
 | BDD acceptance testing          | ✅ **Cucumber**         |
+
+maven-failsafe-plugin -- for functional testing 
+mvn verify
+| Action                    | Command                         | What It Runs                             |
+| ------------------------- | ------------------------------- | ---------------------------------------- |
+| Run **unit tests only**   | `mvn test`                      | Tests in `src/test/java`, named `*Test`  |
+| Run **functional tests**  | `mvn verify`                    | Runs unit + Failsafe tests (e.g., `*IT`) |
+| Run functional tests only | `mvn failsafe:integration-test` | Just integration/functional tests        |
+
