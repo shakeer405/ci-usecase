@@ -32,3 +32,9 @@ echo "Unit testing stage"
 mvn test
 echo "Henerating jacoco report"
 mvn clean test jacoco:report
+
+echo "Running sonar stage"
+mvn sonar:sonar \
+    -Dsonar.projectKey=$SONAR_PROJECT_KEY \
+    -Dsonar.host.url=$SONAR_HOST_URL \
+    -Dsonar.login=$SONAR_TOKEN
