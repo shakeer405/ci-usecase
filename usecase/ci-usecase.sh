@@ -27,3 +27,8 @@ echo "Building Maven Project"
 #mvn clean package -Pprod -DskipTests --batch-mode --update-snapshots -Dmaven.compile.fork=true -T 1C
 #mvn -f /path/to/pom.xml clean install -DskipTests
 mvn clean install -DskipTests
+
+echo "Unit testing stage"
+mvn test
+echo "Henerating jacoco report"
+mvn clean test jacoco:report
