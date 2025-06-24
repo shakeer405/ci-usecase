@@ -94,3 +94,15 @@ mvn verify
 | Run **functional tests**  | `mvn verify`                    | Runs unit + Failsafe tests (e.g., `*IT`) |
 | Run functional tests only | `mvn failsafe:integration-test` | Just integration/functional tests        |
 
+| Aspect                | **Unit Testing**                            | **Functional Testing**                               |
+| --------------------- | ------------------------------------------- | ---------------------------------------------------- |
+| 🔍 **Purpose**        | Test **individual components** in isolation | Test the system’s **end-to-end features or flows**   |
+| 🔧 **Focus**          | Single method/class (smallest unit of code) | Complete user scenarios and business logic           |
+| 🧱 **Scope**          | Internal code logic                         | External behavior/output                             |
+| 🔗 **Dependencies**   | Mocks/stubs used to isolate dependencies    | Real or integrated components (DB, services, UI)     |
+| ⚙️ **Tools** (Java)   | JUnit, TestNG                               | Selenium, Rest Assured, Cucumber, Postman, Karate    |
+| 🔁 **Frequency**      | Fast, run on every commit                   | Slower, run post-build or post-deploy                |
+| 📦 **Environment**    | In-memory/in-process, no deployment needed  | Often requires app deployment or test environment    |
+| ✅ **CI/CD Use Case**  | Verify code correctness early               | Verify feature behavior before release               |
+| 📊 **Typical Output** | Pass/fail per method                        | User-level test result with coverage/response checks |
+
