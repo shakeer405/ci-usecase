@@ -24,4 +24,5 @@ WAR: mvn clean package -Pproduction (ensure packaging is war in pom.xml)
 Spring Boot: mvn clean package -Pproduction -Dspring-boot.repackage=true
 '
 echo "Building Maven Project"
+#mvn clean package -Pprod -DskipTests --batch-mode --update-snapshots -Dmaven.compile.fork=true -T 1C
 mvn clean install -DskipTests
