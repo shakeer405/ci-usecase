@@ -58,4 +58,22 @@ Reason	Explanation
 ✅ CI/CD Integration	Easily integrates with Jenkins, GitHub Actions, SonarQube, etc.
 ✅ Track Coverage Over Time	Helps monitor test effectiveness over builds/releases
 
+Functional testing:
+| **Tool**                      | **Best For**               | **Language** / Stack   | **CI Integration**      | **Notes**                                                                           |
+| ----------------------------- | -------------------------- | ---------------------- | ----------------------- | ----------------------------------------------------------------------------------- |
+| **Selenium**                  | Web UI functional testing  | Any (Java, Python, JS) | Jenkins, GitHub, GitLab | Supports all browsers; often paired with WebDriver; ideal for cross-browser testing |
+| **Cypress**                   | Modern Web apps            | JavaScript             | GitHub, GitLab, Jenkins | Fast, DOM-focused; built-in retry, screenshots, and video                           |
+| **Playwright**                | Cross-browser automation   | JS, Python, .NET, Java | GitHub, Jenkins         | Headless/real browser support; modern alternative to Selenium                       |
+| **TestCafe**                  | End-to-end Web testing     | JavaScript/TypeScript  | GitHub, GitLab, Jenkins | Easy setup, no browser drivers required                                             |
+| **Postman/Newman**            | API functional testing     | Any (via Postman GUI)  | Jenkins, GitHub         | Newman CLI runs Postman tests in pipelines                                          |
+| **Rest Assured**              | REST API testing           | Java                   | Jenkins, GitHub         | Java DSL for API testing, integrates well with JUnit/TestNG                         |
+| **Robot Framework**           | Web/API/Database/CLI       | Python (keyword-based) | Jenkins, GitHub, Azure  | Extensible, readable test cases with libraries for API, Selenium, CLI, DB           |
+| **SoapUI**                    | SOAP & REST API functional | Java                   | Jenkins, GitHub         | GUI and CLI (`testrunner.sh`) for test execution                                    |
+| **Cucumber**                  | BDD-style functional tests | Java, JS, Ruby         | Jenkins, GitHub         | Gherkin syntax for readable test scenarios                                          |
+| **Gauge**                     | Functional & BDD testing   | Java, JS, Python, C#   | Jenkins, GitHub         | From ThoughtWorks, supports markdown-based specs                                    |
+| **Karate**                    | API + UI + performance     | Java DSL               | Jenkins, GitHub         | Combines functional + performance + mocking in one tool                             |
+| **Appium**                    | Mobile app testing         | JS, Java, Python, etc. | Jenkins, GitHub         | Cross-platform testing for Android and iOS apps                                     |
+| **Jest**                      | Functional testing in JS   | JavaScript/TypeScript  | GitHub, GitLab, Jenkins | Snapshot testing, mock functions, and coverage support                              |
+| **TestNG**                    | Functional + unit testing  | Java                   | Jenkins, GitHub         | Parallel test execution, groups, data providers                                     |
+| **Protractor** *(deprecated)* | Angular testing            | JavaScript             | Jenkins, GitHub         | Deprecated in 2023 — consider Cypress or Playwright instead                         |
 
