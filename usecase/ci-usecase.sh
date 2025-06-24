@@ -15,7 +15,7 @@ JFROG_REPO_URL="http://jfrog.example.com/artifactory/docker-local"
 JFROG_USERNAME="your-jfrog-username"
 JFROG_PASSWORD="your-jfrog-password"
 DOCKERFILE_PATH="."
-:'
+: '
 For Specific Packaging Types:
 JAR: mvn clean package -Pproduction
 
