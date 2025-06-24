@@ -25,4 +25,5 @@ Spring Boot: mvn clean package -Pproduction -Dspring-boot.repackage=true
 '
 echo "Building Maven Project"
 #mvn clean package -Pprod -DskipTests --batch-mode --update-snapshots -Dmaven.compile.fork=true -T 1C
+#mvn -f /path/to/pom.xml clean install -DskipTests
 mvn clean install -DskipTests
