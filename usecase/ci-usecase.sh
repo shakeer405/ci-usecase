@@ -4,7 +4,7 @@ set -e
 
 # -------- CONFIGURATIONS --------
 PROJECT_NAME="my-java-app"
-DOCKER_IMAGE="myregistry.example.com/${PROJECT_NAME}:latest"
+DOCKER_IMAGE="shakeer123/ciusecase:latest"
 SONAR_PROJECT_KEY="my-sonar-project"
 SONAR_HOST_URL="http://localhost:9000"
 SONAR_TOKEN="your-sonarqube-token"
