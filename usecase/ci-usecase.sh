@@ -38,3 +38,5 @@ mvn sonar:sonar \
     -Dsonar.projectKey=$SONAR_PROJECT_KEY \
     -Dsonar.host.url=$SONAR_HOST_URL \
     -Dsonar.login=$SONAR_TOKEN
+
+docker build -t registry.example.com/myteam/myapp:1.0.0 --file Dockerfile
