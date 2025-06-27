@@ -30,7 +30,7 @@ mvn clean install -DskipTests
 
 echo "Unit testing stage"
 mvn test
-echo "Henerating jacoco report"
+echo "Generating jacoco report"
 mvn clean test jacoco:report
 
 echo "Running sonar stage"
