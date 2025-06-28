@@ -109,3 +109,6 @@ mvn verify
 | **Unit Test**                          | **Functional Test**                             |
 | -------------------------------------- | ----------------------------------------------- |
 | "Does `a + b` work correctly in code?" | "When I hit `/add?a=2&b=3`, do I get `5` back?" |
+
+port opeinig:
+iptables -I INPUT -p tcp --dport 9000 -j ACCEPT
