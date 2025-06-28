@@ -5,8 +5,8 @@ set -e
 # -------- CONFIGURATIONS --------
 PROJECT_NAME="my-java-app"
 DOCKER_IMAGE="shakeer123/ciusecase:latest"
-SONAR_PROJECT_KEY="ci-usecase"
-SONAR_HOST_URL="http://localhost:9000"
+SONAR_PROJECT_KEY="ciusecase"
+SONAR_HOST_URL="http://148.100.79.130:9000/"
 SONAR_TOKEN="your-sonarqube-token"
 NEXUS_REPO_URL="http://nexus.example.com/repository/maven-releases/"
 NEXUS_USERNAME="your-nexus-username"
