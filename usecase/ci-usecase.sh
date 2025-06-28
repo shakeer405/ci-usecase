@@ -40,3 +40,6 @@ mvn sonar:sonar \
     -Dsonar.login=$SONAR_TOKEN
 
 docker build -t DOCKER_IMAGE --file Dockerfile
+echo "Pushing artifacts to nexus"
+mvn deploy -DaltDeploymentRepository=releases::default::$NEXUS_REPO_URL \
+    -Dnexus.username=$NEXUS_USERNAME -Dnexus.password=$NEXUS_PASSWORD
