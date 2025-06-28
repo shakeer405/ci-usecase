@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: app-prod-pod
-  namespace: production
+  namespace: default
   labels:
     app: my-app
     tier: backend
