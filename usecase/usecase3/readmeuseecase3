@@ -1,0 +1,14 @@
+volumeMounts:
+  - name: config-volume
+    mountPath: /etc/config
+
+volumes:
+  - name: config-volume
+    configMap:
+      name: my-config
+
+
+volumes:
+  - name: secret-volume
+    secret:
+      secretName: my-secret
