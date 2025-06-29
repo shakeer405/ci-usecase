@@ -51,10 +51,15 @@ kubectl taint nodes <node-name> key1=value1:NoSchedule
 
 Adding and Removing Taints:
 Add taint:
+
 kubectl taint nodes node1 key1=value1:NoSchedule
+
 Remove taint:
+
 kubectl taint nodes node1 key1:NoSchedule-
+
 Use a - at the end to remove the taint.
+
 Common Use Cases:
 | Use Case                                 | Taint Type         | Why                                   |
 | ---------------------------------------- | ------------------ | ------------------------------------- |
