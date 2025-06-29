@@ -1,0 +1,101 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-prod-pod
+  namespace: default
+  labels:
+    app: my-app
+    tier: backend
+  annotations:
+    # For GKE Stackdriver logging/monitoring
+    logging.googleapis.com/logging: "true"
+    logging.googleapis.com/monitoring: "true"
+
+spec:
+  restartPolicy: Always
+
+  # Force run on SSD-backed nodes only
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: cloud.google.com/gke-local-ssd
+                operator: Exists
+
+  # Tolerate preemptible nodes if needed
+  tolerations:
+    - key: "cloud.google.com/gke-preemptible"
+      operator: "Exists"
+      effect: "NoSchedule"
+
+  containers:
+    - name: my-backend-app
+      image: gcr.io/my-project/my-backend-app:latest
+      imagePullPolicy: Always
+      ports:
+        - containerPort: 8080
+      envFrom:
+        - configMapRef:
+            name: app-config
+        - secretRef:
+            name: app-secrets
+      volumeMounts:
+        - name: config-volume
+          mountPath: /etc/config
+        - name: storage-volume
+          mountPath: /data
+        - name: tls-certs
+          mountPath: /etc/tls
+          readOnly: true
+      livenessProbe:
+        httpGet:
+          path: /healthz
+          port: 8080
+        initialDelaySeconds: 30
+        periodSeconds: 10
+        failureThreshold: 5
+      readinessProbe:
+        httpGet:
+          path: /ready
+          port: 8080
+        initialDelaySeconds: 15
+        periodSeconds: 5
+        failureThreshold: 3
+      resources:
+        requests:
+          cpu: "500m"
+          memory: "512Mi"
+        limits:
+          cpu: "1"
+          memory: "1Gi"
+      securityContext:
+        runAsUser: 1000
+        runAsNonRoot: true
+        allowPrivilegeEscalation: false
+
+    - name: fluentd-sidecar
+      image: gcr.io/google-containers/fluentd-gcp:1.30
+      resources:
+        limits:
+          memory: "200Mi"
+          cpu: "200m"
+      volumeMounts:
+        - name: storage-volume
+          mountPath: /var/log/app
+
+  volumes:
+    - name: config-volume
+      configMap:
+        name: app-config
+    - name: tls-certs
+      secret:
+        secretName: tls-secret
+    - name: storage-volume
+      persistentVolumeClaim:
+        claimName: app-pvc
+
+  nodeSelector:
+    cloud.google.com/gke-nodepool: backend-pool
+
+  serviceAccountName: app-service-account
