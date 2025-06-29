@@ -1,4 +1,5 @@
 Concept Overview
+
 Taints are applied to nodes to repel pods.
 Tolerations are applied to pods to allow them to schedule onto tainted nodes.
 
